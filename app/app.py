@@ -36,7 +36,7 @@ def _record_metrics(resp):
 
 @app.get("/health")
 def health():
-    return jsonify(status="ok", uptime_seconds=round(time.time() - START_TIME, 1))
+    return jsonify(status="ok", version="1.1", uptime_seconds=round(time.time() - START_TIME, 1))
 
 
 @app.get("/api/tasks")
