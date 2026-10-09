@@ -61,3 +61,11 @@ Every push to `main` now runs the tests, builds the image, and deploys to EC2.
 - Request rate: `sum(rate(app_requests_total[1m]))`
 - Error rate: `sum(rate(app_requests_total{status=~"5.."}[1m]))`
 - Average latency: `rate(app_request_duration_seconds_sum[1m]) / rate(app_request_duration_seconds_count[1m])`
+
+## Screenshots
+
+### CI/CD pipeline (tests, Docker build, auto-deploy to EC2)
+![CI/CD pipeline](docs/github-actions-pipeline.png)
+
+### Grafana dashboard (request rate, error rate, latency, uptime)
+![Grafana dashboard](docs/grafana-dashboard.png)
